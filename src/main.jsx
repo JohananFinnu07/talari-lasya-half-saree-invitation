@@ -62,7 +62,7 @@ const event = {
 
 const photos = [
   [
-    "/photos/photo-01.jpg",
+    `${import.meta.env.BASE_URL}photos/photo-01.jpg`,
 
     "A little moment worth remembering",
 
@@ -70,7 +70,7 @@ const photos = [
   ],
 
   [
-    "/photos/photo-02.jpg",
+    `${import.meta.env.BASE_URL}/photos/photo-02.jpg`,
 
     "A celebration in bloom",
 
@@ -78,7 +78,7 @@ const photos = [
   ],
 
   [
-    "/photos/photo-03.jpg",
+    `${import.meta.env.BASE_URL}/photos/photo-03.jpg`,
 
     "Lasya",
 
@@ -86,7 +86,7 @@ const photos = [
   ],
 
   [
-    "/photos/photo-04.jpg",
+    `${import.meta.env.BASE_URL}/photos/photo-04.jpg`,
 
     "Family, faith & joy",
 
@@ -94,7 +94,7 @@ const photos = [
   ],
 
   [
-    "/photos/photo-05.jpg",
+    `${import.meta.env.BASE_URL}/photos/photo-05.jpg`,
 
     "See you there",
 
@@ -256,7 +256,12 @@ function App() {
         style={{ scaleX: scrollYProgress }}
       />
 
-      <audio ref={audio} src="/music/instrumental.mp3" loop preload="none" />
+      <audio
+        ref={audio}
+        src={`${import.meta.env.BASE_URL}music/instrumental.mp3`}
+        loop
+        preload="none"
+      />
 
       <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-[80] w-[min(92vw,1120px)] rounded-full border border-white/50 bg-[#f7f0e8]/75 backdrop-blur-xl shadow-lux px-4 py-3 flex items-center justify-between">
         <a href="#home" className="display text-xl tracking-wide">

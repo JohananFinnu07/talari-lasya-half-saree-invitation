@@ -8,7 +8,7 @@ export default function LandingPage({ onOpenInvitation }) {
       <div
         className="landing-image"
         style={{
-          backgroundImage: "url('/photos/landingimg.jpg')",
+          backgroundImage: `url('${import.meta.env.BASE_URL}photos/landingimg.jpg')`,
         }}
       />
 
