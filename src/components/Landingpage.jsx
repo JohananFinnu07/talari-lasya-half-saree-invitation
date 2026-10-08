@@ -1,5 +1,5 @@
 import { ArrowDown, Sparkles } from "lucide-react";
-import "./LandingPage.css";
+import "./Landingpage.css";
 
 export default function LandingPage({ onOpenInvitation }) {
   return (

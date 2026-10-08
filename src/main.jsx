@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 
 import "./index.css";
+
 import LandingPage from "./components/Landingpage";
 
 import rose from "./assets/rose-botanical.png";
@@ -70,7 +71,7 @@ const photos = [
   ],
 
   [
-    `${import.meta.env.BASE_URL}/photos/photo-02.jpg`,
+    `${import.meta.env.BASE_URL}photos/photo-02.jpg`,
 
     "A celebration in bloom",
 
@@ -78,7 +79,7 @@ const photos = [
   ],
 
   [
-    `${import.meta.env.BASE_URL}/photos/photo-03.jpg`,
+    `${import.meta.env.BASE_URL}photos/photo-03.jpg`,
 
     "Lasya",
 
@@ -86,7 +87,7 @@ const photos = [
   ],
 
   [
-    `${import.meta.env.BASE_URL}/photos/photo-04.jpg`,
+    `${import.meta.env.BASE_URL}photos/photo-04.jpg`,
 
     "Family, faith & joy",
 
@@ -94,7 +95,7 @@ const photos = [
   ],
 
   [
-    `${import.meta.env.BASE_URL}/photos/photo-05.jpg`,
+    `${import.meta.env.BASE_URL}photos/photo-05.jpg`,
 
     "See you there",
 
@@ -339,23 +340,38 @@ function App() {
       </nav>
 
       {/* =====================================================
-          LANDING PAGE
-          ===================================================== */}
 
-      <AnimatePresence>
+          LANDING PAGE
+
+          \===================================================== */}
+
+      <AnimatePresence mode="wait">
         {!open && (
           <motion.div
-            initial={{ opacity: 1 }}
+            key="landing"
+            initial={{ opacity: 1, scale: 1 }}
             exit={{
               opacity: 0,
+
+              scale: 1.04,
+
+              filter: "blur(4px)",
+
               transition: {
-                duration: 1.1,
+                duration: 1.2,
+
                 ease: [0.16, 1, 0.3, 1],
               },
             }}
             className="fixed inset-0 z-[100]"
           >
-            <LandingPage onOpenInvitation={() => setOpen(true)} />
+            <LandingPage
+              onOpenInvitation={() => {
+                setOpen(true);
+
+                window.scrollTo({ top: 0, behavior: "instant" });
+              }}
+            />
           </motion.div>
         )}
       </AnimatePresence>
@@ -626,7 +642,7 @@ function App() {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https\://www.google.com/maps/search/?api=1&query=Sitarama+Function+Hall+Kaikaluru"
+                  href="https://www\.google.com/maps/search/?api=1&query=Sitarama+Function+Hall+Kaikaluru"
                   className="rounded-full bg-[#4a3d36] text-white px-7 py-3 text-[10px] caps inline-flex items-center gap-2"
                 >
                   View Location <ExternalLink size={13} />
