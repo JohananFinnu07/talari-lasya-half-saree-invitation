@@ -1,0 +1,614 @@
+/* =========================================================
+   LASYA HALF SAREE — LANDING SCREEN
+   Completely isolated from the main invitation CSS
+========================================================= */
+
+.lasya-landing {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+
+  overflow: hidden;
+
+  background: #2d2723;
+
+  color: #fff;
+
+  z-index: 99999;
+
+  isolation: isolate;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.lasya-landing-photo {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+
+  overflow: hidden;
+}
+
+.lasya-landing-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  /*
+    This keeps Lasya visible instead of
+    excessively zooming into the image.
+  */
+  object-position: center center;
+
+  transform: scale(1.015);
+
+  animation: lasya-photo-zoom 12s ease-out forwards;
+}
+
+@keyframes lasya-photo-zoom {
+  from {
+    transform: scale(1.015);
+  }
+
+  to {
+    transform: scale(1.06);
+  }
+}
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.lasya-landing-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(20, 17, 15, 0.05) 0%,
+    rgba(20, 17, 15, 0.08) 38%,
+    rgba(20, 17, 15, 0.48) 72%,
+    rgba(20, 17, 15, 0.72) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.lasya-landing-header {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 32px;
+
+  box-sizing: border-box;
+
+  z-index: 10;
+
+  background: rgba(38, 31, 27, 0.25);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+
+  backdrop-filter: blur(5px);
+}
+
+.lasya-landing-header span {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  color: #fff;
+
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.lasya-landing-content {
+  position: absolute;
+
+  z-index: 10;
+
+  top: 50%;
+  right: 7%;
+
+  transform: translateY(-50%);
+
+  width: min(440px, 38vw);
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  padding: 36px 30px;
+
+  color: #fff;
+}
+
+/* =========================================================
+   ORNAMENT
+========================================================= */
+
+.lasya-ornament {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 17px;
+
+  opacity: 0.95;
+}
+
+.lasya-ornament span {
+  width: 48px;
+
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.lasya-date {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 0.28em;
+
+  font-weight: 400;
+
+  margin-bottom: 20px;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.lasya-title {
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.35);
+}
+
+.lasya-title span:first-child {
+  font-size: clamp(42px, 4.2vw, 68px);
+
+  letter-spacing: -0.025em;
+}
+
+.lasya-title span:last-child {
+  margin-top: 8px;
+
+  font-size: clamp(28px, 2.8vw, 44px);
+
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   LASYA
+========================================================= */
+
+.lasya-name {
+  margin-top: 25px;
+
+  font-size: clamp(30px, 3vw, 44px);
+
+  letter-spacing: 0.18em;
+
+  font-weight: 400;
+
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.lasya-subtitle {
+  margin: 18px 0 26px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.9;
+
+  letter-spacing: 0.18em;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================
+   GUEST CARD
+========================================================= */
+
+.lasya-guest-card {
+  width: min(330px, 100%);
+
+  box-sizing: border-box;
+
+  padding: 21px 24px 23px;
+
+  background: rgba(35, 29, 25, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.38);
+
+  border-radius: 3px;
+
+  backdrop-filter: blur(14px);
+
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================================
+   GUEST
+========================================================= */
+
+.lasya-guest-label {
+  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.lasya-guest-name {
+  margin-top: 7px;
+
+  font-size: 18px;
+
+  color: #fff;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.lasya-divider {
+  width: 78%;
+
+  height: 1px;
+
+  margin: 16px auto 19px;
+
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.lasya-open-button {
+  width: 185px;
+
+  height: 47px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  border-radius: 0;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #fff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.lasya-open-button:hover {
+  background: #fff;
+
+  color: #342b26;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.lasya-scroll-hint {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 32px;
+
+  bottom: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .lasya-landing-content {
+    right: 4%;
+
+    width: min(390px, 45vw);
+  }
+
+  .lasya-title span:first-child {
+    font-size: 43px;
+  }
+
+  .lasya-title span:last-child {
+    font-size: 30px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .lasya-landing {
+    overflow-y: auto;
+
+    overflow-x: hidden;
+  }
+
+  /* Header */
+
+  .lasya-landing-header {
+    height: 58px;
+
+    padding: 0 18px;
+
+    background: rgba(30, 25, 22, 0.38);
+  }
+
+  .lasya-landing-header span {
+    font-size: 10px;
+
+    letter-spacing: 0.14em;
+  }
+
+  /*
+    MOBILE OVERLAY
+    Content sits over the lower part
+    of the photograph.
+  */
+
+  .lasya-landing-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 17, 15, 0.03) 0%,
+      rgba(20, 17, 15, 0.03) 38%,
+      rgba(20, 17, 15, 0.32) 55%,
+      rgba(20, 17, 15, 0.9) 100%
+    );
+  }
+
+  .lasya-landing-content {
+    top: auto;
+
+    right: auto;
+
+    left: 0;
+
+    bottom: 0;
+
+    transform: none;
+
+    width: 100%;
+
+    padding: 24px 18px 30px;
+
+    box-sizing: border-box;
+  }
+
+  .lasya-ornament {
+    margin-bottom: 11px;
+  }
+
+  .lasya-ornament span {
+    width: 32px;
+  }
+
+  .lasya-date {
+    font-size: 8px;
+
+    letter-spacing: 0.2em;
+
+    margin-bottom: 12px;
+  }
+
+  .lasya-title span:first-child {
+    font-size: clamp(34px, 10vw, 46px);
+  }
+
+  .lasya-title span:last-child {
+    margin-top: 5px;
+
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .lasya-name {
+    margin-top: 14px;
+
+    font-size: 27px;
+  }
+
+  .lasya-subtitle {
+    margin: 11px 0 15px;
+
+    font-size: 8px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.12em;
+  }
+
+  .lasya-guest-card {
+    width: min(330px, 92vw);
+
+    padding: 16px 17px 18px;
+  }
+
+  .lasya-guest-label {
+    font-size: 12px;
+  }
+
+  .lasya-guest-name {
+    margin-top: 5px;
+
+    font-size: 16px;
+  }
+
+  .lasya-divider {
+    margin: 12px auto 14px;
+  }
+
+  .lasya-open-button {
+    width: 170px;
+
+    height: 43px;
+
+    font-size: 9px;
+  }
+
+  .lasya-scroll-hint {
+    display: none;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+  .lasya-landing-content {
+    padding: 20px 14px 23px;
+  }
+
+  .lasya-title span:first-child {
+    font-size: 31px;
+  }
+
+  .lasya-title span:last-child {
+    font-size: 23px;
+  }
+
+  .lasya-name {
+    font-size: 24px;
+  }
+
+  .lasya-subtitle {
+    font-size: 7.5px;
+
+    margin-bottom: 12px;
+  }
+
+  .lasya-guest-card {
+    padding: 14px 14px 16px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .lasya-landing-photo img {
+    animation: none;
+
+    transform: none;
+  }
+
+  .lasya-open-button {
+    transition: none;
+  }
+}
