@@ -15,8 +15,37 @@ export default function LandingPage({ onOpenInvitation }) {
       {/* Dark cinematic overlay */}
       <div className="landing-overlay" />
       {/* Top header */}
+      {/* Top scrolling Bible verse header */}
       <header className="landing-header">
-        <div className="header-title">TALARI'S HALF SAREE</div>
+        <div className="landing-header-marquee">
+          <div className="landing-header-track">
+            <span>
+              “For I know the plans I have for you,”
+              <em> declares the Lord </em>— Jeremiah 29:11
+            </span>
+
+            <span className="verse-separator">✦</span>
+
+            <span>
+              “For I know the plans I have for you,”
+              <em> declares the Lord </em>— Jeremiah 29:11
+            </span>
+
+            <span className="verse-separator">✦</span>
+
+            <span>
+              “For I know the plans I have for you,”
+              <em> declares the Lord </em>— Jeremiah 29:11
+            </span>
+
+            <span className="verse-separator">✦</span>
+
+            <span>
+              “For I know the plans I have for you,”
+              <em> declares the Lord </em>— Jeremiah 29:11
+            </span>
+          </div>
+        </div>
       </header>
       {/* Main hero content */}
       <main className="landing-content">
@@ -48,9 +77,9 @@ export default function LandingPage({ onOpenInvitation }) {
 
         {/* Guest card */}
         <div className="guest-card">
-          <p className="guest-label">Dear Sir / Madam</p>
+          {/* <p className="guest-label">Dear Sir / Madam</p>
 
-          <p className="guest-name">Guests Name</p>
+          <p className="guest-name">Guests Name</p> */}
 
           <div className="guest-divider" />
 
@@ -60,11 +89,11 @@ export default function LandingPage({ onOpenInvitation }) {
           </button>
         </div>
       </main>
-      {/* Bottom scroll hint */}
+      {/* Bottom scroll hint
       <div className="scroll-hint">
         <span>SCROLL TO EXPLORE</span>
         <ArrowDown size={14} strokeWidth={1.2} />
-      </div>
+      </div> */}
     </section>
   );
 }
