@@ -39,26 +39,27 @@ export default function LandingPage({ onOpenInvitation }) {
           </div>
         </div>
       </header>
+
       {/* Main hero content */}
-      <main className="landing-content">
-        {/* Decorative element */}
-        <div className="landing-ornament">
-          <span className="ornament-line" />
-          <Sparkles size={15} strokeWidth={1.2} />
-          <span className="ornament-line" />
+      <main className="landing-content landing-hero-card">
+        {/* Date with horizontal lines */}
+        <div className="hero-date-row">
+          <span />
+          <p className="landing-date">26 OCTOBER 2026</p>
+          <span />
         </div>
 
-        {/* Date */}
-        <p className="landing-date">26 OCTOBER 2026</p>
+        {/* Ceremony label */}
+        <p className="hero-eyebrow">A SPECIAL CELEBRATION</p>
 
         {/* Main title */}
         <h1 className="landing-title">
-          HALF SAREE
-          <span>CEREMONY</span>
+          Half Saree
+          <span>Ceremony</span>
         </h1>
 
         {/* Name */}
-        <p className="landing-name">LASYA</p>
+        <p className="landing-name">Lasya</p>
 
         {/* Subtitle */}
         <p className="landing-subtitle">
@@ -67,13 +68,10 @@ export default function LandingPage({ onOpenInvitation }) {
           THIS SPECIAL DAY WITH US
         </p>
 
-        {/* Guest card */}
+        {/* Invitation panel */}
         <div className="guest-card">
-          {/* <p className="guest-label">Dear Sir / Madam</p>
-
-          <p className="guest-name">Guests Name</p> */}
-
-          <div className="guest-divider" />
+          <p className="guest-label">Together with our families</p>
+          <p className="guest-name">You're Invited</p>
 
           <button className="open-invitation" onClick={onOpenInvitation}>
             <span>Open Invitation</span>
@@ -81,11 +79,6 @@ export default function LandingPage({ onOpenInvitation }) {
           </button>
         </div>
       </main>
-      {/* Bottom scroll hint
-      <div className="scroll-hint">
-        <span>SCROLL TO EXPLORE</span>
-        <ArrowDown size={14} strokeWidth={1.2} />
-      </div> */}
     </section>
   );
 }
