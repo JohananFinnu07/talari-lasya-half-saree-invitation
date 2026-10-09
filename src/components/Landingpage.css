@@ -1,4 +1,4 @@
-/* LANDING PAGE â€” Luxury, minimal, cinematic */
+/* LANDING PAGE — Luxury, minimal, cinematic */
 .landing-page {
   position: relative;
   width: 100%;
@@ -51,14 +51,13 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: rgba(52, 72, 61, 0.94);
+  background: rgba(52, 72, 61, 0.96);
   border-bottom: 1px solid rgba(215, 188, 138, 0.7);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
-/* MARQUEE */
+/* MARQUEE VIEWPORT */
 .landing-header-marquee {
   display: block;
   width: 100%;
@@ -67,14 +66,18 @@
   white-space: nowrap;
 }
 
+/* CONTINUOUS SCROLLING TRACK */
 .landing-header-track {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   width: max-content;
   min-width: max-content;
-  animation: landingHeaderScroll 24s linear infinite;
+  animation: landingHeaderScroll 18s linear infinite;
+  -webkit-animation: landingHeaderScroll 18s linear infinite;
   will-change: transform;
   transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .landing-header-track span {
@@ -105,13 +108,24 @@
   letter-spacing: 0;
 }
 
-/* Seamless loop: JSX should contain two matching copies of the verse */
+/* SEAMLESS LOOP — JSX MUST CONTAIN TWO MATCHING COPIES */
 @keyframes landingHeaderScroll {
   from {
     transform: translate3d(0, 0, 0);
   }
+
   to {
     transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@-webkit-keyframes landingHeaderScroll {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -283,26 +297,33 @@
   text-transform: uppercase;
 }
 
-/* MOBILE */
+/* MOBILE-FIRST RESPONSIVE STYLES */
 @media (max-width: 600px) {
   .landing-header {
     height: 54px;
-    background: rgba(52, 72, 61, 0.97);
+    background: rgba(52, 72, 61, 0.98);
     border-bottom-color: rgba(215, 188, 138, 0.82);
   }
 
   .landing-header-marquee {
     width: 100%;
+    min-width: 0;
     overflow: hidden;
   }
 
   .landing-header-track {
-    animation-duration: 22s;
+    width: max-content;
+    min-width: max-content;
+    animation-duration: 18s;
+    -webkit-animation-duration: 18s;
     animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
     animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
   }
 
   .landing-header-track span {
+    flex-shrink: 0;
     margin-right: 28px;
     color: #f7f0e3;
     font-size: 17px;
@@ -315,6 +336,7 @@
   }
 
   .landing-header-track .verse-separator {
+    flex-shrink: 0;
     margin-right: 28px;
     font-size: 13px;
   }
@@ -372,6 +394,11 @@
     font-size: 10px;
     letter-spacing: 0.14em;
   }
+
+  .scroll-hint {
+    bottom: 16px;
+    font-size: 8px;
+  }
 }
 
 /* SMALL MOBILE */
@@ -406,11 +433,11 @@
   }
 }
 
-/* REDUCED MOTION */
+/* REDUCED MOTION: KEEP THE VERSE MOVING */
 @media (prefers-reduced-motion: reduce) {
   .landing-header-track {
-    animation: none;
-    transform: none;
+    animation: landingHeaderScroll 18s linear infinite !important;
+    -webkit-animation: landingHeaderScroll 18s linear infinite !important;
   }
 
   .open-invitation {
