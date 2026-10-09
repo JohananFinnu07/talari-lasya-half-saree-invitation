@@ -16,33 +16,25 @@ export default function LandingPage({ onOpenInvitation }) {
       <div className="landing-overlay" />
       {/* Top header */}
       {/* Top scrolling Bible verse header */}
-      <header className="landing-header">
+      <header className="landing-header" aria-label="Bible verse">
         <div className="landing-header-marquee">
           <div className="landing-header-track">
+            {/* First copy */}
             <span>
               “For I know the plans I have for you,”
               <em> declares the Lord </em>— Jeremiah 29:11
             </span>
+            <span className="verse-separator" aria-hidden="true">
+              ✦
+            </span>
 
-            <span className="verse-separator">✦</span>
-
-            <span>
+            {/* Second copy — identical for seamless scrolling */}
+            <span aria-hidden="true">
               “For I know the plans I have for you,”
               <em> declares the Lord </em>— Jeremiah 29:11
             </span>
-
-            <span className="verse-separator">✦</span>
-
-            <span>
-              “For I know the plans I have for you,”
-              <em> declares the Lord </em>— Jeremiah 29:11
-            </span>
-
-            <span className="verse-separator">✦</span>
-
-            <span>
-              “For I know the plans I have for you,”
-              <em> declares the Lord </em>— Jeremiah 29:11
+            <span className="verse-separator" aria-hidden="true">
+              ✦
             </span>
           </div>
         </div>
