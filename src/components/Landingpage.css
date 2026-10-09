@@ -130,6 +130,7 @@
 }
 
 /* MAIN HERO CONTENT */
+
 .landing-content {
   position: relative;
   z-index: 5;
@@ -138,7 +139,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 58px 20px 20px;
+  transform: translateY(-28px);
 }
 
 /* DECORATIVE ORNAMENT */
@@ -343,7 +345,8 @@
 
   .landing-content {
     width: 92%;
-    padding: 72px 14px 35px;
+    padding: 58px 14px 20px;
+    transform: translateY(-38px);
   }
 
   .landing-ornament {
@@ -417,7 +420,8 @@
   }
 
   .landing-content {
-    padding-top: 66px;
+    padding-top: 54px;
+    transform: translateY(-32px);
   }
 
   .landing-title {
